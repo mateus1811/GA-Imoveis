@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<body>
+	<ui:composition template="templates/newTemplate.xhtml">
+
+		<ui:define name="top">
+			<link type="text/css" rel="stylesheet"
+				href="resources/css/cssLayout.css" />
+			<link type="text/css" rel="stylesheet"
+				href="resources/css/defautlt.css" />
+
+			<h:form>
+
+				<p:graphicImage id="image" library="images" name="logo.jpg"
+					height="100px" width="100px" />
+				<br />
+				<br />
+				<p:outputLabel value="Login " for="iptTexto" />
+				<p:inputText id="iptTexto" value="" />
+				<p:outputLabel value=" Senha " for="iptTexto1" />
+				<p:password id="iptTexto1" value="" />
+				
+
+
+				<br />
+				<br />
+
+			</h:form>
+			<h:form>
+				<p:commandButton value="Logar" action="logado.xhtml" />
+				
+				<p:commandButton value="Cadastre-se!" action="cadastroCliente.xhtml" />
+			</h:form>
+		</ui:define>
+
+		<ui:define name="content">
+			<h:form>
+				<h:panelGrid columns="1" style="margin-bottom:10px" cellpadding="15">
+					<p:breadCrumb>
+						<p:menuitem value="Categories" url="#" />
+						<p:menuitem value="Seu Perfil" url="#" />
+						<p:menuitem value="Imoveis" url="#" />
+					</p:breadCrumb>
+				</h:panelGrid>
+			</h:form>
+			<h:form>
+				<p:panelGrid columns="2" style="margin-bottom:10px" cellpadding="15">
+
+					<p:selectOneRadio>
+						<f:selectItem itemLabel="Comprar" itemValue="Comprar" />
+						<br />
+						<f:selectItem itemLabel="Alugar" itemValue="Alugar" />
+					</p:selectOneRadio>
+					<br />
+					<br />
+				</p:panelGrid>
+
+				<p:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+					<p:outputLabel for="tipo" value="Qual tipo? " />
+					<p:selectOneMenu id="tipo" value="" style="width:125px">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItem itemLabel="Casa" itemValue="Casa" />
+						<f:selectItem itemLabel="Apartamento" itemValue="Apartamento" />
+						<f:selectItem itemLabel="Chácara" itemValue="Chácara" />
+						<f:selectItem itemLabel="Fazenda" itemValue="Fazenda" />
+					</p:selectOneMenu>
+
+					<p:outputLabel for="onde" value="Onde? " />
+					<p:selectOneMenu id="onde" value="" style="width:125px">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItem itemLabel="Centro" itemValue="Centro" />
+						<f:selectItem itemLabel="Boa Vista" itemValue="Boa Vista" />
+						<f:selectItem itemLabel="Aloísio Pinto" itemValue="Aloísio Pinto" />
+						<f:selectItem itemLabel="Heliópolis" itemValue="Heliópolis" />
+						<f:selectItem itemLabel="Indiano" itemValue="Indiano" />
+					</p:selectOneMenu>
+				</p:panelGrid>
+
+				<p:panelGrid columns="2" style="margin-bottom:100px"
+					cellpadding="100">
+					<p:commandButton value="Buscar" />
+				</p:panelGrid>
+			</h:form>
+
+		</ui:define>
+
+		<ui:define name="bottom">
+
+			<h:form>
+				<h:panelGrid columns="3">
+					<p:commandButton value="Anuncie aqui!"
+						action="cadastroAnunciante.xhtml" />
+				</h:panelGrid>
+			</h:form>
+		</ui:define>
+
+	</ui:composition>
+
+</body>
+</html>

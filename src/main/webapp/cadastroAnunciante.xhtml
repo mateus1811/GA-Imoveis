@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<body>
+
+	<ui:composition template="templates/newTemplate.xhtml">
+
+		<ui:define name="top">
+		<link type="text/css" rel="stylesheet" href="resources/css/cssLayout.css"/>
+		<link type="text/css" rel="stylesheet" href="resources/css/defautlt.css"/>
+		<p:graphicImage id="image" library="images" name="logo.jpg"
+				height="100px" width="100px" />
+		</ui:define>
+
+		<ui:define name="content">
+			<h:form>
+				<h:panelGrid columns="2">
+					<p:outputLabel value="Preencha os campos abaixo " />
+					<br />
+					<p:outputLabel value="Nome" for="iptTexto" />
+					<p:inputText id="iptTexto" value="#{anuncianteController.anunciante.nome}" />
+
+					<p:outputLabel value="Email" for="iptEmail" />
+					<p:inputText id="iptEmail" value="#{anuncianteController.anunciante.email}" />
+
+					<p:outputLabel value="TEL.Celular" for="iptCel" />
+					<p:inputMask id="iptCel" value="#{anuncianteController.anunciante.telefoneCel}"  mask="(99)99999-9999"/>
+
+					<p:outputLabel value="TEL.Comercial" for="iptCo" />
+					<p:inputMask id="iptCo" value="#{anuncianteController.anunciante.telefoneCom}"  mask="(99)99999-9999"/>
+
+					<p:outputLabel value="TEL.Residencial" for="iptRe" />
+					<p:inputMask id="iptRe" value="#{anuncianteController.anunciante.telefoneRes}"  mask="(99)99999-9999"/>
+
+					<p:outputLabel value="Senha" for="iptSecret" />
+					<p:password id="iptSecret" value="#{anuncianteController.anunciante.senha}" >
+					<f:validateRequired/>
+					<f:validateLength maximum="20" minimum="8"/>
+					</p:password>
+
+					<p:outputLabel value="Confirmação da Senha" for="iptCSecret1" />
+					<p:password id="iptCSecret1" value="#{anuncianteController.anunciante.senha}" />
+					<br />
+					<br />
+
+					<h:commandButton value="Salvar" action="#{anuncianteController.addAnunciante}"/>
+				</h:panelGrid>
+			</h:form>
+			<p:messages autoUpdate="true"/>
+		</ui:define>
+
+		<ui:define name="bottom">
+
+		</ui:define>
+
+	</ui:composition>
+
+</body>
+</html>

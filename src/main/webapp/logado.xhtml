@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<body>
+
+	<ui:composition template="templates/newTemplate.xhtml">
+
+		<ui:define name="top">
+			<link type="text/css" rel="stylesheet"
+				href="resources/css/cssLayout.css" />
+			<link type="text/css" rel="stylesheet"
+				href="resources/css/defautlt.css" />
+			<p:graphicImage id="image" library="images" name="logo.jpg"
+				height="90px" width="90px" />
+
+			<p:panelGrid columns="1" style="margin-bottom:10px" cellpadding="15">
+				<p:breadCrumb>
+					<p:menuitem value="Categories" url="#" />
+					<p:menuitem value="Meu Perfil" url="perfilCliente.xhtml" />
+					<p:menuitem value="Imoveis" url="#" />
+				</p:breadCrumb>
+			</p:panelGrid>
+
+		</ui:define>
+
+		<ui:define name="content">
+			<p:panelGrid columns="3">
+				<p:graphicImage id="casa1" library="images" name="casa1.jpg"
+					height="200px" width="440px" />
+
+				<p:graphicImage id="casa2" library="images" name="casa2.jpg"
+					height="200px" width="440px" />
+
+				<p:graphicImage id="casa3" library="images" name="casa3.jpg"
+					height="200px" width="440px" />
+
+				<p:graphicImage id="casa4" library="images" name="casa4.jpg"
+					height="200px" width="440px" />
+
+				<p:graphicImage id="casa5" library="images" name="casa5.jpg"
+					height="200px" width="440px" />
+
+				<p:graphicImage id="casa6" library="images" name="casa6.jpg"
+					height="200px" width="440px" />
+			</p:panelGrid>
+		</ui:define>
+
+		<ui:define name="bottom">
+
+		</ui:define>
+
+	</ui:composition>
+
+</body>
+</html>

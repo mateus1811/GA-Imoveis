@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<body>
+	<ui:composition template="templates/newTemplate.xhtml">
+		<ui:define name="top">
+			<link type="text/css" rel="stylesheet"
+				href="resources/css/cssLayout.css" />
+			<link type="text/css" rel="stylesheet"
+				href="resources/css/defautlt.css" />
+			<p:graphicImage id="image" library="images" name="logo.jpg"
+				height="90px" width="90px" />
+			<br />
+			<br />
+			<p:graphicImage id="imageperfil" library="images" name="perfil.png"
+				height="70px" width="70px" />
+
+			<h:form>
+				<br />
+				
+				
+			</h:form>
+		</ui:define>
+
+		<ui:define name="content">
+			<h:form>
+				<p:growl id="messages" showDetail="true" />
+
+				<p:toolbar>
+					<f:facet name="left">
+						<h:commandButton type="button" value="Minhas Informações"
+							icon="pi pi-file" />
+
+						<h:commandButton type="button" value="Meus Imoveis" />
+
+						<p:commandButton value="Cadastre seu Imóvel" action="cadastroImovel.xhtml" />
+						<span class="ui-separator"> <span
+							class="ui-icon pi pi-ellipsis-v" />
+						</span>
+
+					</f:facet>
+
+					<f:facet name="right">
+						<p:menuButton value="Opções">
+							<p:menuitem value="Alterar" action="#{toolbarView.update}"
+								update="messages" icon="pi pi-refresh" />
+							<p:menuitem value="Deletar" action="#{toolbarView.delete}"
+								ajax="false" icon="pi pi-times" />
+						</p:menuButton>
+					</f:facet>
+
+				</p:toolbar>
+
+
+			</h:form>
+
+		</ui:define>
+
+		<ui:define name="bottom">
+
+		</ui:define>
+
+	</ui:composition>
+
+</body>
+</html>

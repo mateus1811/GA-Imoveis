@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="templates/newTemplate.xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+	<ui:define name="top">
+		<link type="text/css" rel="stylesheet"
+			href="resources/css/cssLayout.css" />
+		<link type="text/css" rel="stylesheet"
+			href="resources/css/defautlt.css" />
+		<p:graphicImage id="image" library="images" name="logo.jpg"
+			height="90px" width="90px" />
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:panelGrid columns="4">
+				<p:outputLabel value="Preencha os campos abaixo " />
+				<br />
+				<p:outputLabel value="Rua" for="iptTexto" />
+				<p:inputText id="iptTexto" value="#{imovelController.imovel.rua}" />
+
+				<p:outputLabel value="Numero" for="iptnum" />
+				<p:inputText id="iptnum" value="#{imovelController.imovel.numero}" />
+
+				<p:outputLabel value="Cidade" for="iptCid" />
+				<p:inputText id="iptCid" value="#{imovelController.imovel.cidade}" />
+
+				<p:outputLabel value="Bairro" for="iptBairro" />
+				<p:inputText id="iptBairro"
+					value="#{imovelController.imovel.bairro}" />
+
+				<p:outputLabel value="CEP" for="iptCEP" />
+				<p:inputMask id="iptCEP" value="#{imovelController.imovel.cep}" mask="99999-999"/>
+
+				<p:outputLabel for="tipo" value="tipo" />
+					<p:selectOneMenu id="tipo" value="#{imovelController.imovel.tipo}" style="width:125px">
+						<f:selectItem itemLabel="" itemValue="" />
+						<f:selectItem itemLabel="Casa" itemValue="Casa" />
+						<f:selectItem itemLabel="Apartamento" itemValue="Apartamento" />
+						<f:selectItem itemLabel="Chácara" itemValue="Chácara" />
+						<f:selectItem itemLabel="Fazenda" itemValue="Fazenda" />
+					</p:selectOneMenu>
+
+				<p:outputLabel value="nº de suítes" for="iptSuites" />
+				<p:inputText id="iptSuites" value="#{imovelController.imovel.suite}" />
+
+				<p:outputLabel value="nº de banheiros" for="iptBanheiros" />
+				<p:inputText id="iptBanheiros"
+					value="#{imovelController.imovel.banheiro}" />
+
+				<p:outputLabel value="Área total do terreno" for="iptAreaT" />
+				<p:inputText id="iptAreaT" value="#{imovelController.imovel.areaT}" />
+
+				<p:outputLabel value="Área construida" for="iptAreaC" />
+				<p:inputText id="iptAreaC" value="#{imovelController.imovel.areaC}" />
+
+				<p:outputLabel value="Condominio" for="iptCond" />
+				<p:inputText id="iptCond"
+					value="#{imovelController.imovel.condominio}" />
+
+				<p:outputLabel value="Novo" for="iptNovo" />
+				<p:selectOneRadio id="iptNovo" value="#{imovelController.imovel.novo}">
+						<f:selectItem itemLabel="Sim" itemValue="true"/>
+						<f:selectItem itemLabel="Não" itemValue="false"/>
+					</p:selectOneRadio>
+				
+
+				<p:outputLabel value="IPTU" for="iptIPTU" />
+				<p:inputText id="iptIPTU" value="#{imovelController.imovel.iptu}" />
+
+				<p:outputLabel value="Venda" for="iptVenda" />
+				<p:selectOneRadio id="iptVenda" value="#{imovelController.imovel.venda}">
+						<f:selectItem itemLabel="Sim" itemValue="true"/>
+						<f:selectItem itemLabel="Não" itemValue="false"/>
+					</p:selectOneRadio>
+
+				<p:outputLabel value="Valor" for="iptValor" />
+				<p:inputText id="iptValor" value="#{imovelController.imovel.valor}" />
+				
+				<p:outputLabel value="nº de dormitórios" for="iptDorm" />
+				<p:inputText id="iptDorm"
+					value="#{imovelController.imovel.dormitorio}" />
+				<br />
+				<br />
+
+				<h:commandButton value="Salvar"
+					action="#{imovelController.addImovel}" />
+			</h:panelGrid>
+		</h:form>
+		<p:messages autoUpdate="true"/>
+	</ui:define>
+
+	<ui:define name="bottom">
+
+	</ui:define>
+
+</ui:composition>
